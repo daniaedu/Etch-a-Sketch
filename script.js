@@ -1,7 +1,7 @@
 const container = document.getElementById('container');
 const colorButton = document.getElementById('colorMode');
 const rainbowButton = document.getElementById('rainbowMode');
-const eraserButton = document.getElementById('eraser');
+const eraserButton = document.getElementById('eraserMode');
 
 // Fixed grid size (N x N) 
 const N = 8;
@@ -45,4 +45,24 @@ eraserButton.addEventListener('click', () => {
     rainbowButton.classList.remove('active');
     eraserButton.classList.add('active');
 });
+
+// Add event listeners to each grid square
+const gridSquares = document.querySelectorAll('.gridSquare');
+
+gridSquares.forEach(gridSquare => {
+    gridSquare.addEventListener('click', checkClass)
+});
+
+// Checks which button is toggled on and calls appropriate function
+function checkClass(event) {
+    if (colorButton.classList.contains('active')) {
+        colorMode(event);
+    }
+    else if (rainbowButton.classList.contains('active')) {
+        rainbowMode(event);
+    }
+    else {
+        eraserMode(event);
+    }
+}
 
