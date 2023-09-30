@@ -66,3 +66,20 @@ function checkClass(event) {
     }
 }
 
+// Shades the appropriate grid square
+function colorMode (event) {
+    event.target.style.backgroundColor = 'black';
+}
+
+// Shades the appropriate grid square with a random color
+function rainbowMode (event) {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    event.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue}`;
+}
+
+// Erasers the shaded grid square
+function eraserMode (event) {
+    event.target.style.backgroundColor = 'white';
+}
