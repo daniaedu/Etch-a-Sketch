@@ -25,3 +25,24 @@ for (let i = 0; i < N; i++) {
     container.appendChild(gridSquare);
   }
 }
+
+// Add event listeners to toggle buttons on/off
+
+colorButton.addEventListener('click', () => {
+    colorButton.classList.add('active');
+    rainbowButton.classList.remove('active');
+    eraserButton.classList.remove('active');
+});
+
+rainbowButton.addEventListener('click', () => {
+    colorButton.classList.remove('active');
+    rainbowButton.classList.add('active');
+    eraserButton.classList.remove('active');
+});
+
+eraserButton.addEventListener('click', () => {
+    colorButton.classList.remove('active');
+    rainbowButton.classList.remove('active');
+    eraserButton.classList.add('active');
+});
+
